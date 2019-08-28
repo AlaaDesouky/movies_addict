@@ -7,7 +7,6 @@ const App = () => {
   return (
     <>
       <h1>Movie Addict</h1>
-      <p>{text}</p>
     </>
   );
 };
