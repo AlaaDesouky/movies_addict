@@ -9,6 +9,7 @@ export const ContextController = ({ children }) => {
   const [moviesList, setMoviesList] = useState([]);
   const [currentMovie, setCurrentMovie] = useState([]);
   const [step, setStep] = useState(0);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     let currentMovies = getRandomMovies(10);
@@ -39,9 +40,22 @@ export const ContextController = ({ children }) => {
     }
   };
 
+  const updateScore = () => {
+    setScore(score + 10);
+  };
+
   return (
     <MoviesContext.Provider
-      value={[currentMovie, moviesList, nextMovie, prevMovie]}
+      value={[
+        movies,
+        currentMovie,
+        moviesList,
+        nextMovie,
+        prevMovie,
+        score,
+        updateScore,
+        step
+      ]}
     >
       {children}
     </MoviesContext.Provider>

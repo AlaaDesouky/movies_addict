@@ -1,11 +1,11 @@
-const MoviesSelectList = ({ movie, nextMovie }) => {
+const MoviesSelectList = ({ movie, onClick }) => {
   return (
-    <button
+    <input
       className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-      onClick={nextMovie}
-    >
-      <em>{movie}</em>
-    </button>
+      onClick={onClick}
+      value={movie}
+      type="button"
+    />
   );
 };
 

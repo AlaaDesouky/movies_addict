@@ -5,9 +5,15 @@ import NextPrevButton from "../common/NextPrevButton";
 import MoviesSelectList from "./MoviesSelectList";
 
 const Movie = () => {
-  const [currentMovie, moviesList, nextMovie, prevMovie] = useContext(
-    MoviesContext
-  );
+  const [
+    movies,
+    currentMovie,
+    moviesList,
+    nextMovie,
+    prevMovie,
+    score,
+    updateScore
+  ] = useContext(MoviesContext);
 
   // Create a random selectlist and shuffle it
   let shuffledMoviesList = [];
@@ -20,6 +26,13 @@ const Movie = () => {
     shuffledMoviesList = currentMoviesList.sort(() => Math.random() - 0.5);
   }
 
+  const handleScore = e => {
+    if (e.target.value === currentMovie.movie) {
+      updateScore();
+    }
+    nextMovie();
+  };
+
   return (
     <>
       {currentMovie && (
@@ -30,7 +43,7 @@ const Movie = () => {
               <MoviesSelectList
                 key={index}
                 movie={movie}
-                nextMovie={nextMovie}
+                onClick={handleScore}
               />
             ))}
           </div>
