@@ -19,7 +19,7 @@ const Movie = () => {
   let shuffledMoviesList = [];
   if (currentMovie) {
     let currentMoviesList = [currentMovie.movie];
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i < 3; i++) {
       let randomNumber = Math.floor(Math.random() * moviesList.length);
       currentMoviesList = [...currentMoviesList, moviesList[randomNumber]];
     }

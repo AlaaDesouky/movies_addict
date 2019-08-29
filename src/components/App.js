@@ -19,6 +19,20 @@ const App = () => {
     step
   ] = useContext(MoviesContext);
 
+  let levelOfAddiction;
+
+  if (score < 20) {
+    levelOfAddiction = "What are you doing with your life?";
+  } else if (score < 40) {
+    levelOfAddiction = "You work too much or something?";
+  } else if (score < 60) {
+    levelOfAddiction = "Not good, not bad.";
+  } else if (score < 80) {
+    levelOfAddiction = "Well done, champ.";
+  } else {
+    levelOfAddiction = "Legendary! Get a social life though.";
+  }
+
   return (
     <>
       <div style={{ height: "100vh" }} className="container">
@@ -31,13 +45,13 @@ const App = () => {
             step < movies.length ? (
               <Movie />
             ) : (
-              <Score score={score} />
+              <Score score={score} levelOfAddiction={levelOfAddiction} />
             )
           ) : (
             <Spinner />
           )}
         </div>
-        <Footer repo="" />
+        <Footer repo="https://github.com/AlaaDesouky/movies_addict" />
       </div>
     </>
   );
