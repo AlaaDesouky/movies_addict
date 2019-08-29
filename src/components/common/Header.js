@@ -7,8 +7,10 @@ const Header = ({ title, subtitle }) => {
       className="d-flex justify-content-center align-items-center text-center"
     >
       <div className="container">
+        <br />
         <h1 className="display-4">{title}</h1>
         <p>{subtitle}</p>
+        <hr />
       </div>
     </div>
   );

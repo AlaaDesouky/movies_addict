@@ -1,4 +1,5 @@
 import Movie from "./movie/Movie";
+import Score from "./score/Score";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 
@@ -11,7 +12,8 @@ const App = () => {
           subtitle="Test your movies addiction level"
         />
         <div style={{ height: "70%" }}>
-          <Movie />
+          {/* <Movie /> */}
+          <Score score="70" />
         </div>
         <Footer repo="" />
       </div>
