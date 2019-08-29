@@ -6,7 +6,10 @@ const App = () => {
   return (
     <>
       <div style={{ height: "100vh" }} className="container">
-        <Header title="Movies Addict" />
+        <Header
+          title="Movies Addict"
+          subtitle="Test your movies addiction level"
+        />
         <div style={{ height: "70%" }}>
           <Movie />
         </div>

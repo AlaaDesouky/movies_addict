@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ title }) => {
+const Header = ({ title, subtitle }) => {
   return (
     <div
       style={{ height: "20%" }}
@@ -8,6 +8,7 @@ const Header = ({ title }) => {
     >
       <div className="container">
         <h1 className="display-4">{title}</h1>
+        <p>{subtitle}</p>
       </div>
     </div>
   );
